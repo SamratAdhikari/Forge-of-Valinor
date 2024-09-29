@@ -1,2 +1,2 @@
 # Forge-of-Valinor
-A inifinte craft clone made with React, MongoDB and Express
+An inifinte craft clone made with React, MongoDB and Express
