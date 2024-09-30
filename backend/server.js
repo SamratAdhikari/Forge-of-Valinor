@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import connectDB from "./db/connect.db.js";
-import userRoutes from "./user/user.controller.js";
+import userRoutes from "./routes/controller.js";
 
 // initialization
 const app = express();

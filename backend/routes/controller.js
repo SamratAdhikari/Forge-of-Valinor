@@ -7,11 +7,11 @@ import {
     logout,
     showElements,
     signup,
-} from "./user.service.js";
+} from "./service.js";
 import {
     loginValidationSchema,
     signupValidationSchema,
-} from "./user.validation.js";
+} from "./validation.js";
 
 const router = express.Router();
 
