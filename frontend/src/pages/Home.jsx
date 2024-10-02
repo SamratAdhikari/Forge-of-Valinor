@@ -1,13 +1,17 @@
-const element = { name: "Happy", emoji: "😀" };
+import Canvas from "../components/canvas-section/Canvas";
+import Forge from "../components/forge-section/Forge";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 const Home = () => {
     return (
-        <div className="w-full m-2 flex items-center justify-center gap-3">
-            hi
-        </div>
+        <DndProvider backend={HTML5Backend}>
+            <div className="w-full h-full flex border-2 border-gray-500 rounded-lg">
+                <Canvas />
+                <Forge />
+            </div>
+        </DndProvider>
     );
 };
 
 export default Home;
-
-// HOME <LogoutButton />

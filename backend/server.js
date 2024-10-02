@@ -14,7 +14,7 @@ app.use(cookieParser());
 await connectDB();
 
 // register routes
-app.use(userRoutes);
+app.use("/api/", userRoutes);
 
 // port setup
 app.listen(PORT, () => {

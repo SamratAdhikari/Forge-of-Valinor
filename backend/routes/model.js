@@ -1,16 +1,19 @@
 import mongoose from "mongoose";
 
 // Define the schema for an element
-const elementSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
+const elementSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+        },
+        emoji: {
+            type: String,
+            required: true,
+        },
     },
-    emoji: {
-        type: String,
-        required: true,
-    },
-});
+    { _id: false }
+);
 
 const userSchema = new mongoose.Schema({
     email: {

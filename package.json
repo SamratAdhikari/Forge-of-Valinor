@@ -1,7 +1,7 @@
 {
     "name": "forge-of-valinor",
     "version": "1.0.0",
-    "description": "A inifinte craft clone made with React, MongoDB and Express",
+    "description": "An inifinte craft clone made with React, MongoDB and Express",
     "main": "index.js",
     "type": "module",
     "scripts": {

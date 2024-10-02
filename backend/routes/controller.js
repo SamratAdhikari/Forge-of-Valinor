@@ -1,17 +1,8 @@
 import express from "express";
 import validateData from "../middleware/validate.data.js";
 import protectRoute from "../middleware/protect.route.js";
-import {
-    addElements,
-    login,
-    logout,
-    showElements,
-    signup,
-} from "./service.js";
-import {
-    loginValidationSchema,
-    signupValidationSchema,
-} from "./validation.js";
+import { addElements, login, logout, showElements, signup } from "./service.js";
+import { loginValidationSchema, signupValidationSchema } from "./validation.js";
 
 const router = express.Router();
 
