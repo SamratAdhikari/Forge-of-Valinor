@@ -15,7 +15,7 @@ const PurgeButton = () => {
                 alt="Infinity Gauntlet"
                 className="w-6 h-6 cursor-pointer"
             />
-            <span className="ml-2 text-blue-950 font-semibold">Purge</span>
+            <span className="ml-2 text-[#282C34] font-semibold">Purge</span>
         </button>
     );
 };

@@ -1,19 +1,27 @@
+import { useDrop } from "react-dnd";
 import Element from "./Element.jsx";
 import PurgeButton from "./PurgeButton.jsx";
 import LogoutButton from "./LogoutButton.jsx";
+import useFetchElements from "../../hooks/useFetchElements.js";
 
-const Forge = () => {
-    const elements = [
-        { name: "Water", emoji: "🌊" },
-        { name: "Earth", emoji: "🌍" },
-        { name: "Fire", emoji: "🔥" },
-        { name: "Wind", emoji: "🌬️" },
-        { name: "Metal", emoji: "⚒️" },
-        { name: "Wood", emoji: "🌲" },
-    ];
+const Forge = ({ onDeleteElement }) => {
+
+    const [, drop] = useDrop(() => ({
+        accept: "ELEMENT",
+        drop: (item) => {
+            // Call the delete function when an element is dropped here
+            onDeleteElement(item.index);
+        },
+        collect: (monitor) => ({
+            isOver: monitor.isOver(),
+        }),
+    }));
 
     return (
-        <div className="w-[25%] bg-white relative rounded-r-lg h-full p-4 flex flex-col">
+        <div
+            ref={drop}
+            className={`flex flex-col w-[25%] bg-gray-100 relative rounded-r-lg h-full p-4`}
+        >
             <h1 className="text-center font-semibold text-yellow-500 text-2xl p-2">
                 {"Celebrimbor's Forge"}
             </h1>
@@ -30,7 +38,7 @@ const Forge = () => {
 
             <div className="flex w-full mt-4 justify-around">
                 <PurgeButton className="flex-1 mx-1" />
-                <LogoutButton className="flex-1 mx-1" />
+                <LogoutButton className="z-10 flex-1 mx-1" />
             </div>
         </div>
     );

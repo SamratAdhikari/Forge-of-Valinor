@@ -2,7 +2,7 @@ import { useDrag } from "react-dnd";
 
 const Element = ({ element }) => {
     const [{ isDragging }, drag] = useDrag(() => ({
-        type: "ELEMENT", // The type must match what the Canvas accepts
+        type: "ELEMENT",
         item: { element },
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
@@ -12,7 +12,7 @@ const Element = ({ element }) => {
     return (
         <div
             ref={drag}
-            className={`flex items-center text-gray-700 bg-white p-4 shadow-sm border-2 border-gray-200 rounded-md cursor-pointer min-w-[100px] h-1 text-center ${
+            className={`flex items-center text-gray-700 bg-white p-4 shadow-sm border-2 border-gray-200 rounded-md cursor-pointer min-w-[100px] h-1 font-semibold text-center ${
                 isDragging ? "opacity-50" : "opacity-100"
             }`}
         >

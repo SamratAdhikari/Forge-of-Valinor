@@ -1,8 +1,8 @@
 import { GrClearOption } from "react-icons/gr";
 
-const ClearButton = () => {
+const ClearButton = ({ setDroppedElements }) => {
     const clearCanvas = () => {
-        console.log("Canvas Cleared");
+        setDroppedElements([]);
     };
 
     return (
