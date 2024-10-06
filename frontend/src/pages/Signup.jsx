@@ -118,7 +118,7 @@ const Signup = () => {
                         to="/login"
                         className="text-sm hover:underline hover:text-yellow-600 mt-2 block mx-auto text-center"
                     >
-                        {"Already have and account?"}
+                        {"Already have an account?"}
                     </Link>
                 </form>
             </div>
