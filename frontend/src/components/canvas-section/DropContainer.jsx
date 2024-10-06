@@ -11,7 +11,6 @@ const DropContainer = ({
 }) => {
     const [elementRects, setElementRects] = useState({});
     const [, setCollisionDetected] = useState(false);
-
     const { addElement } = useAddElement();
 
     // React DnD useDrop hook
@@ -39,10 +38,10 @@ const DropContainer = ({
     }));
 
     // Add new element to the canvas
-    const addElementToCanvas = (element, position) => {
+    const addElementToCanvas = (element, position, isNew = false) => {
         setDroppedElements((prevElements) => [
             ...prevElements,
-            { element, position },
+            { element, position, isNew },
         ]);
     };
 
@@ -80,13 +79,9 @@ const DropContainer = ({
                                 name: combinedElement.name,
                                 emoji: combinedElement.emoji,
                             },
-                            newPosition
+                            newPosition,
+                            isNew
                         );
-
-                        // If it's a new element, apply shiny animation
-                        if (isNew) {
-                            applyShinyAnimation();
-                        }
                     }
 
                     removeElements([parseInt(keys[i]), parseInt(keys[j])]);
@@ -112,17 +107,6 @@ const DropContainer = ({
         setDroppedElements((prevElements) =>
             prevElements.filter((_, i) => !indexes.includes(i))
         );
-    };
-
-    // Apply shiny animation to the new element
-    const applyShinyAnimation = () => {
-        const newElement = document.querySelector(".shiny-element");
-        if (newElement) {
-            newElement.classList.add("shiny-animation");
-            setTimeout(() => {
-                newElement.classList.remove("shiny-animation");
-            }, 2000); // Remove animation after 2 seconds
-        }
     };
 
     useEffect(() => {

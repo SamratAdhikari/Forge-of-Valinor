@@ -1,4 +1,3 @@
-// src/components/Canvas/DraggableElement.jsx
 import { useDrag } from "react-dnd";
 import { useEffect, useRef } from "react";
 
@@ -11,7 +10,7 @@ const DraggableElement = ({ element, index, position, onCollisionCheck }) => {
         }),
     }));
 
-    const elementRef = useRef(null); // Add ref to the element
+    const elementRef = useRef(null); // Ref to the element
 
     useEffect(() => {
         if (elementRef.current) {
@@ -26,9 +25,8 @@ const DraggableElement = ({ element, index, position, onCollisionCheck }) => {
                 drag(node); // Connect drag with the element ref
                 elementRef.current = node;
             }}
-            className={`absolute inline-flex items-center justify-center text-gray-700 bg-white p-4 shadow-sm border-2 border-gray-200 rounded-md cursor-pointer min-w-[100px] h-1 font-semibold text-center ${
-                isDragging ? "opacity-0" : ""
-            }`}
+            className={`absolute inline-flex items-center justify-center text-gray-700 bg-white p-4 shadow-sm border-2 border-gray-200 rounded-md cursor-pointer min-w-[100px] h-1 font-semibold text-center
+                ${isDragging ? "opacity-0" : ""}`}
             style={{
                 left: `${position.x}px`,
                 top: `${position.y}px`,
