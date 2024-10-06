@@ -1,11 +1,12 @@
 import gauntletIcon from "../../assets/icons/gauntlet.png";
 import usePurgeElements from "../../hooks/usePurgeElements";
 
-const PurgeButton = () => {
+const PurgeButton = ({ setDroppedElements }) => {
     const { purgeElements } = usePurgeElements();
 
     const handlePurge = async () => {
         await purgeElements();
+        setDroppedElements([]);
     };
 
     return (

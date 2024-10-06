@@ -19,7 +19,7 @@ const Home = () => {
                     droppedElements={droppedElements}
                     setDroppedElements={setDroppedElements}
                 />
-                <Forge onDeleteElement={deleteElement} />
+                <Forge onDeleteElement={deleteElement} setDroppedElements={setDroppedElements}/>
             </div>
         </DndProvider>
     );

@@ -82,10 +82,9 @@ const DropContainer = ({
                             newPosition,
                             isNew
                         );
+                        removeElements([parseInt(keys[i]), parseInt(keys[j])]);
+                        setCollisionDetected(true);
                     }
-
-                    removeElements([parseInt(keys[i]), parseInt(keys[j])]);
-                    setCollisionDetected(true);
 
                     return;
                 }
@@ -110,7 +109,7 @@ const DropContainer = ({
     };
 
     useEffect(() => {
-        detectCollisions(); // Run whenever elementRects updates
+        detectCollisions();
     }, [elementRects]);
 
     return (
