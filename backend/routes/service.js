@@ -93,8 +93,8 @@ export const logout = (req, res) => {
     }
 };
 
-// ! Show elements helper
-export const showElements = async (req, res) => {
+// ! fetch elements helper
+export const fetchElements = async (req, res) => {
     try {
         const userId = req.user._id;
         const user = await User.findById(userId);
@@ -172,3 +172,40 @@ export const addElements = async (req, res) => {
         });
     }
 };
+
+// ! purge helper
+export const purgeElements = async (req, res) => {
+    const userId = req.user._id;
+
+    try {
+        // Find the user by ID
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res
+                .status(404)
+                .send({ success: false, message: "User not found" });
+        }
+
+        // Get the elements array from the user document
+        const elements = user.elements;
+
+        // Retain the first four elements and remove the rest
+        user.elements = elements.slice(0, 4);
+
+        // Save the updated user document after deleting extra elements
+        await user.save();
+
+        return res.status(200).send({
+            success: true,
+            message: "Forge Purged!",
+            elements: user.elements,
+        });
+    } catch (error) {
+        // Return a 500 error in case of any server issues
+        return res.status(500).send({
+            success: false,
+            message: error.message,
+        });
+    }
+};  

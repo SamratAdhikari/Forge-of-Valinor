@@ -12,7 +12,7 @@ export const generateCombinedElement = async (element1, element2) => {
         Rules:
         - Ensure the name is a single word if possible. If the new word cannot be easily understood, use multiple simple words.
         - Include exactly one emoji in double quotes.
-        - The new element should be clear, concise, and related to the combination.
+        - The new element should be clear, concise, and related to the combination. It should be a noun.
         - Avoid overly complex or obscure combinations. The generated word should make sense based on common knowledge or real-world associations.
         - For example: Fire + Water = {name: 'Steam', emoji: '💨'} or Earth + Water = {name: 'Mud', emoji: '🌧️'}.
         
