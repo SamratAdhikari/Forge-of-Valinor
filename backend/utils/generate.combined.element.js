@@ -45,6 +45,6 @@ export const generateCombinedElement = async (element1, element2) => {
         };
     } catch (error) {
         console.error("Error generating combined element:", error);
-        throw new Error("Failed to generate combined element", error);
+        throw new Error("Please try combining again");
     }
 };
