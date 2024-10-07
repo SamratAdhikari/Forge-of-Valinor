@@ -37,7 +37,7 @@ export const generateCombinedElement = async (element1, element2) => {
 
         const result = JSON.parse(resultText);
 
-        console.log(result);
+        console.log(resultText);
 
         return {
             combinedName: result.name,
@@ -45,6 +45,6 @@ export const generateCombinedElement = async (element1, element2) => {
         };
     } catch (error) {
         console.error("Error generating combined element:", error);
-        throw new Error("Failed to generate combined element");
+        throw new Error("Failed to generate combined element", error);
     }
 };
