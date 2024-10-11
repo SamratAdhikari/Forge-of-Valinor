@@ -33,7 +33,6 @@ export const generateCombinedElement = async (element1, element2) => {
 
         // Parse the returned content
         let resultText = chatCompletion.choices[0]?.message?.content.trim();
-        resultText = resultText.match(/{[^}]*}/)?.[0] || null;
 
         const result = JSON.parse(resultText);
 
