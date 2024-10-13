@@ -7,7 +7,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 export const generateCombinedElement = async (element1, element2) => {
     const prompt = `
         You are supposed to act as an alchemy game, where combining two words generates a new word that logically relates to the combination of those words.
-        Combine ${element1} and ${element2} to create a new element. Your response should ONLY include the JSON format: {'name': 'name', 'emoji': 'emoji'}.
+        Combine ${element1} and ${element2} to create a new element. Your response should ONLY include the JSON format: {name: 'name', emoji: 'emoji'}.
         
         Rules:
         - Ensure the name is a single word if possible. If the new word cannot be easily understood, use multiple simple words.
