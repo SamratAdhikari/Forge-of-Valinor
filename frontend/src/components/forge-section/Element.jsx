@@ -12,7 +12,7 @@ const Element = ({ element }) => {
     return (
         <div
             ref={drag}
-            className={`flex items-center text-gray-700 bg-white p-4 shadow-sm border-2 border-gray-200 rounded-md cursor-pointer min-w-[100px] h-1 font-semibold text-center ${
+            className={`flex items-center text-gray-700 bg-white p-4 shadow-sm border-2 border-gray-300 rounded-md cursor-pointer min-w-[100px] h-1 font-semibold text-center m-0 ${
                 isDragging ? "opacity-50" : "opacity-100"
             }`}
         >

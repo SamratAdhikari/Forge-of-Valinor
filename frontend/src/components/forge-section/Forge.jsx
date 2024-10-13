@@ -32,7 +32,7 @@ const Forge = ({ onDeleteElement, setDroppedElements }) => {
             <div className="divider before:bg-gray-400 after:bg-gray-400"></div>
 
             <div className="flex-1 overflow-y-auto">
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-1">
                     {elements.map((element) => (
                         <Element key={element.name} element={element} />
                     ))}
