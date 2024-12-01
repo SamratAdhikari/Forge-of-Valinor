@@ -1,6 +1,6 @@
-import Groq from "groq-sdk"; // Import the Groq SDK
+import Groq from "groq-sdk";
 
-// Initialize Groq with your API key
+// Initialize Groq with the API key
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 // Function to generate a combined element
@@ -28,7 +28,7 @@ export const generateCombinedElement = async (element1, element2) => {
                     content: prompt,
                 },
             ],
-            model: "llama3-8b-8192", // Use the specified LLaMA3 model
+            model: "llama3-8b-8192",
         });
 
         // Parse the returned content
